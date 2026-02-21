@@ -1,17 +1,17 @@
 # 🌦 Weather App – Real-Time Weather with Voice Output
 
-A Python-based Weather Application that fetches real-time weather data using an external API and speaks the temperature aloud using Text-to-Speech.
+A simple Python-based Weather Application that fetches real-time weather data using WeatherAPI and announces the current temperature using Text-to-Speech.
 
-This project demonstrates API integration, JSON parsing, and voice automation.
+This project demonstrates API integration, JSON data handling, and voice automation using Python.
 
 ---
 
 ## 🚀 Features
 
-- Fetches real-time weather data
-- Uses external Weather API
+- Fetches real-time weather data for any city
+- Uses WeatherAPI for live data
 - Parses JSON response
-- Displays full weather response
+- Displays full weather response in terminal
 - Speaks temperature using Text-to-Speech
 - Simple command-line interface
 
@@ -20,9 +20,9 @@ This project demonstrates API integration, JSON parsing, and voice automation.
 ## 🛠 Technologies Used
 
 - Python 3
-- requests (API calls)
-- json (built-in)
-- pyttsx3 (Text-to-Speech)
+- requests (API integration)
+- json (built-in module)
+- pyttsx3 (Text-to-Speech engine)
 
 ---
 
@@ -50,8 +50,8 @@ WeatherApp/
 1. Takes city name as input from user.
 2. Sends a GET request to WeatherAPI.
 3. Receives weather data in JSON format.
-4. Extracts current temperature.
-5. Speaks the temperature aloud using `pyttsx3`.
+4. Extracts the current temperature (in Celsius).
+5. Announces the temperature using Text-to-Speech.
 
 ---
 
@@ -62,50 +62,64 @@ WeatherApp/
 pip install requests  
 pip install pyttsx3  
 
-### 2️⃣ Get Your Own API Key (Recommended)
+### 2️⃣ Get Your API Key
 
 - Visit: https://www.weatherapi.com/
 - Create a free account
 - Generate your API key
-- Replace the key inside:
 
-url = f"https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q={city}"
+### 3️⃣ Insert Your API Key
 
-### 3️⃣ Run the Program
+Open `main.py` and replace:
 
+```
+key=YOUR_API_KEY
+```
+
+with your actual API key.
+
+⚠ Do NOT upload your real API key to GitHub.
+
+### 4️⃣ Run the Program
+
+```
 python main.py
+```
 
 ---
 
 ## 💬 Example
 
-Enter the name of the City: Delhi  
+Input:
+```
+Enter the name of the City: Delhi
+```
 
 Output:
-- Displays JSON weather data
+- Displays weather JSON data in terminal
 - Speaks:
   "The current temperature in Delhi is 28 degree Celsius."
 
 ---
 
-## 🔐 Important Note
+## 🔐 Security Note
 
-⚠ Do NOT expose your personal API key publicly.
+Do not expose your API key publicly.
 
-For security:
-- Store API key in environment variables
-- Or use a config file
+If pushing to GitHub:
+- Replace your real API key with `YOUR_API_KEY`
+- Or store it securely using environment variables
 
 ---
 
 ## 💡 Future Improvements
 
-- Add weather condition (rainy, cloudy, etc.)
-- Add humidity & wind speed
-- Add error handling for invalid city names
-- Add GUI interface
+- Add humidity and weather condition display
+- Add wind speed information
+- Add proper error handling for invalid cities
+- Convert temperature to Fahrenheit
 - Hide API key using environment variables
-- Support Fahrenheit conversion
+- Build a GUI version
 
 ---
 
